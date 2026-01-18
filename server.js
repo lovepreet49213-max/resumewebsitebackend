@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 // POST endpoint to send email
 app.post("/send-email", async (req, res) => {
   const { to, subject, text } = req.body;
-  console.log(to, subject, text);
+  
   try {
  
     console.log(transporter);
@@ -48,6 +48,6 @@ app.post("/send-email", async (req, res) => {
 
 
 
+export default app;
 
-app.listen(5000, () => console.log("Server running on port 5000"));
 
