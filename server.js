@@ -9,11 +9,15 @@ import transporter from "./src/component/nodemailer.js";
 
 
 const app = express();
-const corsOptions = {
-    origin:   "https://www.eaglesonproperty.com",
-    credentials: true
-}
-app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: "https://www.eaglesonproperty.com",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+}));
+
+app.options("*", cors());
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
