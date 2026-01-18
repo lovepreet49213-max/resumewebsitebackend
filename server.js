@@ -16,22 +16,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// app.post("/send-sms", async (req, res) => {
-//   const { phone, message } = req.body;
-//   console.log(phone, message);
-//   console.log(client);
-//   try {
-//     await client.messages.create({
-//       body: message,
-//       from: process.env.TWILIO_PHONE,
-//       to: phone, // +91XXXXXXXXXX
-//     });
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 
-//     res.json({ success: true, message: "SMS sent" });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
 
 // POST endpoint to send email
 app.post("/send-email", async (req, res) => {
