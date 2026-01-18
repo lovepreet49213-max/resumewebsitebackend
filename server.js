@@ -10,7 +10,7 @@ import transporter from "./src/component/nodemailer.js";
 
 const app = express();
 const corsOptions = {
-    origin:   "http://localhost:5173",
+    origin:   "lovepreet-60ledv51i-lovepreet-singhs-projects-0e0ebcf3.vercel.app",
     credentials: true
 }
 app.use(cors(corsOptions));
